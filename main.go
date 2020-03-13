@@ -290,7 +290,7 @@ func checkGithubRepo(alertPage *AlertPage, client *http.Client, tokens []string)
 			log.Println("no repo found for ", detail.CVEID)
 		} else {
 			log.Println("found repos for", detail.CVEID)
-			detail.GithubSearch = urlStr
+			detail.GithubSearch = "https://github.com/search?q=" + detail.CVEID
 		}
 	}
 }
