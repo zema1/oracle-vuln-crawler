@@ -239,7 +239,7 @@ func fetchDetails(client *http.Client, alertPage *AlertPage, tokens []string) {
 			Product:         tds.Eq(0 + surplus).Text(),
 			Component:       tds.Eq(1 + surplus).Text(),
 			Protocol:        tds.Eq(2 + surplus).Text(),
-			NeedAuth:        strings.TrimSpace(tds.Eq(3+surplus).Text()) == "Yes",
+			NeedAuth:        strings.TrimSpace(tds.Eq(3+surplus).Text()) == "No",
 			AffectedVersion: strings.Join(strings.Fields(tds.Eq(tds.Size()-2).Text()), ""),
 		}
 		alertPage.Details = append(alertPage.Details, detail)
